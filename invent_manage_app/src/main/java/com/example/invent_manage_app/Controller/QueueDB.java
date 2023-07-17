@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-public class QueueDB {
+public class QueueDB<T>{
     private int front;
     private int rear;
     private int capacity;

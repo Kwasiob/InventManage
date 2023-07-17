@@ -16,6 +16,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+
 public class ViewGoodsController {
     public ChoiceBox<String> category;
     public Button remove_btn;
@@ -313,7 +314,7 @@ public class ViewGoodsController {
     }
     private void addGood(){
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/addGoodModal.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Styles/addGoodModal.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -328,7 +329,7 @@ public class ViewGoodsController {
 
     private void vendorOptionModal(){
         try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/issuedGoodModal.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/Styles/issuedGoodModal.fxml"));
             Parent root = fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -391,10 +392,8 @@ public class ViewGoodsController {
 
     public static void sell(Goods selectedItem) {
         if (selectedItem == null) {
-//            selectedItem = searchForItem(toIssue.getName());
         }
         Goods updatedItem = selectedItem;
-//        updatedItem.setSold((selectedItem.getSold() + toIssue.getQuantity()));
         updatedItem.setQuantity((selectedItem.getQuantity() - toIssue.getQuantity()));
         String table = selectedItem.getGood_name().toLowerCase().split("/")[0].split(" ")[0];
         switch (table) {
@@ -455,10 +454,6 @@ public class ViewGoodsController {
         ViewIssuedGoodsController.issuedGoodsList.add(0, toIssue);
         ViewIssuedGoodsController.issuedGoods.add(0, toIssue);
 
-//        DBConnection dbConnection = DBConnection.getInstance();
-//        Connection connection = DatabaseConnection.getConnection();
-//        connection.execSQL("UPDATE " + table + " SET sold = " + (selectedItem.getSold() + toIssue.getQuantity()) + ", quantity = "
-//                        + (selectedItem.getQuantity() - toIssue.getQuantity()) + " WHERE id = " + selectedItem.getGood_id());
     }
 
 

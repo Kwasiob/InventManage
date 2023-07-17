@@ -2,7 +2,7 @@ package com.example.invent_manage_app.Controller;
 
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import model.Model;
+import com.example.invent_manage_app.Models.Model;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -26,11 +26,9 @@ public class LeftMenuController implements Initializable {
     private void addListeners(){
         dashboard_btn.setOnAction(event -> onDashboard());
         view_vendor_btn.setOnAction(event -> onViewVendors());
-//        add_goods_btn.setOnAction(event -> onAddGoods());
         view_goods_btn.setOnAction(event -> onViewGoods());
         view_bills_btn.setOnAction(event -> onViewBills());
         issued_goods_btn.setOnAction(event -> onIssuedGoods());
-//        view_issued_goods_btn.setOnAction(event -> onViewIssuedGoods());
     }
 
     private void onDashboard(){
@@ -46,5 +44,4 @@ public class LeftMenuController implements Initializable {
     private void onViewGoods(){Model.getInstance().getViewFactory().getSelectedMenuItem().set("viewGoods");}
     private void onViewBills(){Model.getInstance().getViewFactory().getSelectedMenuItem().set("viewBills");}
     private void onIssuedGoods(){Model.getInstance().getViewFactory().getSelectedMenuItem().set("issuedGoods");}
-//    private void onViewIssuedGoods(){Model.getInstance().getViewFactory().getSelectedMenuItem().set("viewIssuedGoods");}
 }

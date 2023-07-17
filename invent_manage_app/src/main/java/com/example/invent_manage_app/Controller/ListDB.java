@@ -6,7 +6,7 @@ import javafx.collections.ObservableList;
 import javax.swing.*;
 import java.sql.*;
 
-public class ListDB {
+public class ListDB<T> {
     private  int size;
     private String cat;
     private Class<T> clazz;

@@ -2,9 +2,9 @@ package com.example.invent_manage_app.Controller;
 
 import java.sql.*;
 
-public class DatabaseConnection {
+public class  DatabaseConnection {
     public static Connection getConnection() throws SQLException {
-        String url = "jdbc:mysql://localhost:3306/netmart";
+        String url = "jdbc:mysql://localhost/netmart";
         String user = "root";
         String password = "network123";
         Connection connection = DriverManager.getConnection(url, user, password);
