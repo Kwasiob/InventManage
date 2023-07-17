@@ -10,10 +10,8 @@ import javafx.stage.Stage;
 
 public class ViewFactory {
     private final StringProperty selectedMenuItem;
-    // DASHBOARD VIEW
     private AnchorPane dashboardView;
     private AnchorPane navbarView;
-    // VIEW VENDORS VIEW
     private AnchorPane viewVendorsView;
     // ADD GOODS
 //    private AnchorPane addGoodsView;
@@ -39,7 +37,7 @@ public class ViewFactory {
     public AnchorPane getDashboardView(){
         if(dashboardView == null){ // PREVENTS LOADING DASHBOARD MORE THAN ONCE
             try{
-                dashboardView = new FXMLLoader(getClass().getResource("/FXML/Dashboard.fxml")).load();
+                dashboardView = new FXMLLoader(getClass().getResource("/Styles/Dashboard.fxml")).load();
             } catch (Exception e){
                 e.printStackTrace();
             }
@@ -51,7 +49,7 @@ public class ViewFactory {
     public AnchorPane getViewVendorsView() {
         if(viewVendorsView == null){ // PREVENTS LOADING DASHBOARD MORE THAN ONCE
             try{
-                viewVendorsView = new FXMLLoader(getClass().getResource("/FXML/viewVendors.fxml")).load();
+                viewVendorsView = new FXMLLoader(getClass().getResource("/Styles/viewVendors.fxml")).load();
             } catch (Exception e){
                 e.printStackTrace();
             }
@@ -61,7 +59,7 @@ public class ViewFactory {
 
     // GETTING ADD GOODS VIEW
 //    public AnchorPane getAddGoodsView() {
-//        if(addGoodsView == null){ // PREVENTS LOADING DASHBOARD MORE THAN ONCE
+//        if(addGoodsView== null){ // PREVENTS LOADING DASHBOARD MORE THAN ONCE
 //            try{
 //                addGoodsView = new FXMLLoader(getClass().getResource("/FXML/addGoods.fxml")).load();
 //            } catch (Exception e){
@@ -75,7 +73,7 @@ public class ViewFactory {
     public AnchorPane getViewGoodsView() {
         if(viewGoodsView == null){ // PREVENTS LOADING DASHBOARD MORE THAN ONCE
             try{
-                viewGoodsView = new FXMLLoader(getClass().getResource("/FXML/viewGoods.fxml")).load();
+                viewGoodsView = new FXMLLoader(getClass().getResource("/Styles/viewGoods.fxml")).load();
             } catch (Exception e){
                 e.printStackTrace();
             }
@@ -87,7 +85,7 @@ public class ViewFactory {
     public AnchorPane getViewBillsView() {
         if(viewBillsView == null){ // PREVENTS LOADING DASHBOARD MORE THAN ONCE
             try{
-                viewBillsView = new FXMLLoader(getClass().getResource("/FXML/viewBills.fxml")).load();
+                viewBillsView = new FXMLLoader(getClass().getResource("/Styles/viewBills.fxml")).load();
             } catch (Exception e){
                 e.printStackTrace();
             }
@@ -99,7 +97,7 @@ public class ViewFactory {
     public AnchorPane getIssuedGoodsView() {
         if(IssuedGoodsView == null){ // PREVENTS LOADING DASHBOARD MORE THAN ONCE
             try{
-                IssuedGoodsView = new FXMLLoader(getClass().getResource("/FXML/issuedGoods.fxml")).load();
+                IssuedGoodsView = new FXMLLoader(getClass().getResource("/Styles/issuedGoods.fxml")).load();
             } catch (Exception e){
                 e.printStackTrace();
             }
@@ -121,13 +119,13 @@ public class ViewFactory {
 
     // TO DISPLAY LOGIN WINDOW FOR AUTHENTICATION
     public void showLoginWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/login.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Styles/login.fxml"));
         createStage(loader);
     }
 
     // TO DISPLAY MAIN WINDOW
     public void showMainWindow(){
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/Window.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Styles/Window.fxml"));
         ChangeViewController changeViewController = new ChangeViewController(); // CONTROLLER FOR THE WINDOW FXML SINCE THAT BORDER PANE DOESN'T HAVE A CONTROLLER
         loader.setController(changeViewController);
         createStage(loader);
@@ -143,7 +141,7 @@ public class ViewFactory {
         }
         Stage stage = new Stage();
         stage.setScene(scene);
-        stage.setTitle("Inventory Manager");
+        stage.setTitle("Inventory App");
         stage.setResizable(false);
         stage.show();
     }

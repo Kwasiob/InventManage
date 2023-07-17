@@ -1,10 +1,7 @@
 package com.example.invent_manage_app.Controller;
 
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 
 import javax.swing.*;
@@ -12,7 +9,6 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class AddGoods implements Initializable {
-
     public ChoiceBox<String> category;
     public DatePicker date;
 
@@ -25,8 +21,7 @@ public class AddGoods implements Initializable {
     public TextField total_cost;
 
     private final String[] categories = {"Beverages", "Bakery", "Canned", "Dairy", "Dry",
-            "Frozen", "Meat", "FarmProduce", "Cleaner", "Paper", "HomeEssentials"};
-
+            "Frozen", "Meat", "Produce", "Cleaner", "Paper", "Personal"};
     public VBox indexVBox;
     public TextField index;
 
@@ -36,18 +31,17 @@ public class AddGoods implements Initializable {
         category.getItems().addAll(categories);
         save_btn.setOnAction(event -> onSave());
         category.getSelectionModel().selectedItemProperty().addListener((options, oldValue, newValue) -> {
-            if (newValue == "FarmProduce" || newValue == "Cleaner" || newValue ==  "Paper" || newValue ==  "HomeEssentials"){
+            if (newValue == "Produce" || newValue == "Cleaner" || newValue ==  "Paper" || newValue ==  "Personal"){
                 indexVBox.setVisible(true);
             }else {
                 indexVBox.setVisible(false);
             }
         });
-
     }
-
 
     public void onSave(){
         if(!item_1.getText().isBlank() && !category.getValue().isBlank() && !item_1_qty.getText().isBlank() && !item_1_buying_price.getText().isBlank() && !item_1_selling_price.getText().isBlank()){
+            // GETTING ITEM 1 VALUES
             String cat = category.getValue();
             String item1 = item_1.getText();
             int quantity = Integer.parseInt(item_1_qty.getText());

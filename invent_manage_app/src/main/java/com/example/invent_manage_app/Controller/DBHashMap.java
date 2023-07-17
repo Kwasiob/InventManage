@@ -2,14 +2,14 @@ package com.example.invent_manage_app.Controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
+import com.google.gson.Gson;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.HashMap;
 
-public class DBHashMap <K, V> {
+public class DBHashMap<K, V> {
     private String cat;
 
     public DBHashMap(String cat){

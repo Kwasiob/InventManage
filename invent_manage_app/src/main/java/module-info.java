@@ -3,6 +3,7 @@ module com.example.invent_manage_app {
     requires javafx.fxml;
     requires java.sql;
     requires java.desktop;
+    requires com.google.gson;
 
 
     opens com.example.invent_manage_app to javafx.fxml;

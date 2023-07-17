@@ -1,9 +1,9 @@
-package model;
+package com.example.invent_manage_app.Models;
 
 import com.example.invent_manage_app.Admin.AdminController;
 import com.example.invent_manage_app.Controller.DatabaseConnection;
+import com.example.invent_manage_app.view.ViewFactory;
 
-import javax.swing.text.ViewFactory;
 import java.sql.ResultSet;
 
 public class Model {
@@ -60,5 +60,4 @@ public class Model {
             ex.printStackTrace();
         }
     }
-
 }

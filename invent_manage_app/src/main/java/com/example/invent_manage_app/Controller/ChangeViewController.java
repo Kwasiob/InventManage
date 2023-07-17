@@ -2,7 +2,7 @@ package com.example.invent_manage_app.Controller;
 
 import javafx.fxml.Initializable;
 import javafx.scene.layout.BorderPane;
-import model.Model;
+import com.example.invent_manage_app.Models.Model;
 
 import java.net.URL;
 import java.util.ResourceBundle;

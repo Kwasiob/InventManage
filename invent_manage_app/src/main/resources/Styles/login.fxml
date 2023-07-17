@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: light-grey;" stylesheets="@login.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.invent_manage_app.Controller.LoginController">
+    <StackPane layoutX="202.0" prefHeight="400.0" prefWidth="398.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <VBox alignment="CENTER" prefHeight="400.0" prefWidth="700.0" styleClass="login-form-container" StackPane.alignment="CENTER">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+            <Label fx:id="error_lbl" alignment="CENTER" styleClass="error-lbl" text="" textAlignment="CENTER" />
+            <Label text="USERNAME" />
+            <TextField fx:id="name_field" prefWidth="365.0" promptText="Enter username" styleClass="input-field" />
+            <Label layoutX="10.0" layoutY="10.0" text="PASSWORD" />
+            <PasswordField fx:id="password_field" prefHeight="42.0" prefWidth="358.0" promptText="Enter password" />
+            <Button fx:id="login_btn" alignment="CENTER" mnemonicParsing="false" prefHeight="30.0" prefWidth="361.0" style="-fx-alignment: center;" styleClass="login-button" text="LOG IN" VBox.vgrow="ALWAYS" />
+        </VBox>
+    </StackPane>
+</AnchorPane>
